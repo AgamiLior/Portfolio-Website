@@ -1,8 +1,7 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-// const bodyParser = require('body-parser')
-
+let port = process.env.PORT || 3000;
 app.use(express.json());
 
 
@@ -19,6 +18,6 @@ app.get('/', async (req, res) => {
 	res.render('index.html')
 })
 
-app.listen(3000, () => {
-	console.log('Server on Port 3000')
+app.listen(port, () => {
+	console.log(`Server on Port ${port}`)
 })
